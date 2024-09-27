@@ -15,12 +15,22 @@ class Grid():
         self.children = []
 
     def showGrid(self):
-        for x in range(self.numberOfRows):
+
+        fontSize = int(self.blockWidth*0.5) 
+        font = pygame.font.SysFont(None, fontSize , True)
+
+        for x in range(self.numberOfCols):
             xPos = self.blockWidth * (x + 1)
+            text = font.render(str(x), 1, (0, 0, 0))
+            text.set_alpha(60)
+            self.window.blit(text, (xPos - self.blockWidth/2, self.blockHeight/2 ))
             pygame.draw.line(self.window, (0, 0, 0), (xPos, 0), (xPos, self.height))
 
-        for y in range(self.numberOfCols):
+        for y in range(self.numberOfRows):
             yPos = self.blockHeight * (y + 1)
+            text = font.render(str(y), 1, (0, 0, 0))
+            text.set_alpha(60)
+            self.window.blit(text, (self.blockWidth/2, yPos - self.blockHeight/2))
             pygame.draw.line(self.window, (0, 0, 0), (0, yPos), (self.width, yPos))
 
     def addChild(self, child, startPos: tuple, colSpan = 1, rowSpan = 1):

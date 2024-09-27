@@ -8,7 +8,7 @@ WIN = pygame.display.set_mode((600, 700))
 pygame.display.set_caption("Testing")
 
 #Grid 
-grid = Container.Grid(WIN, 30, 30)
+grid = Container.Grid(WIN, 10, 10)
 
 def start():
     print("start")
@@ -16,15 +16,15 @@ def start():
 def menu():
     print("menu")
 
-grid.addChild(Elements.BasicButton("Start", start, (255, 0, 0), (0, 0, 0)), (7, 20), 6, 2)
-grid.addChild(Elements.BasicButton("menu", menu, (0, 0, 255), (0, 0, 0)), (17, 20), 6, 2)
-# grid.addChild(Elements.TestingBox((0, 255, 0)), (15, 20), 5, 2)
+# grid.addChild(Elements.BasicButton("Start", start, (255, 0, 0), (0, 0, 0)), (7, 20), 6, 2)
+# grid.addChild(Elements.BasicButton("menu", menu, (0, 0, 255), (0, 0, 0)), (17, 20), 6, 2)
+#grid.addChild(Elements.TestingBox((0, 255, 0)), (4, 0), 3, 2)
 
 
 def drawWindow():
     pygame.draw.rect(WIN, (255, 255, 255), (0, 0, 600, 700))
     grid.render()
-    # grid.showGrid()
+    grid.showGrid()
 
 run = True
 while run:
