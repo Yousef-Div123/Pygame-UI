@@ -15,7 +15,7 @@ class Grid():
         self.children = []
 
     def showGrid(self):
-
+        """draw grid lines in window to help developers visualize their code better"""
         fontSize = int(self.blockWidth*0.5) 
         font = pygame.font.SysFont(None, fontSize , True)
 
@@ -34,6 +34,7 @@ class Grid():
             pygame.draw.line(self.window, (0, 0, 0), (0, yPos), (self.width, yPos))
 
     def addChild(self, child, startPos: tuple, colSpan = 1, rowSpan = 1):
+        """add an element to children list"""
         # startPos[0] = colNumber, startPos[1] = rowNumber
 
 
@@ -56,6 +57,7 @@ class Grid():
         self.children.append(child)
 
     def render(self):
+        """Render all children on the window"""
         for child in self.children:
             child._draw(self.window)
             # print("x:", child.x)
@@ -64,5 +66,6 @@ class Grid():
             # print("height:", child.height)
 
     def checkEvent(self, event):    
+        """runs checkEvent function for every child"""
         for child in self.children:
             child._checkEvent(event)
