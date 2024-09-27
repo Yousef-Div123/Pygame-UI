@@ -79,3 +79,39 @@ class BasicButton(GuiElement):
 
         if(self.x + self.width>=mouseX>= self.x and self.y + self.height>=mouseY>= self.y and event.type == pygame.MOUSEBUTTONDOWN):
             self.action()
+
+
+class BasicLabel(GuiElement):
+    def __init__(self, text, color, fontName = None):
+        super().__init__()
+        self.text = text
+        self.color = color
+        self.fontName = fontName
+
+    def _draw(self,win):
+        text = self.font.render(self.text, 1, self.color)
+        win.blit(text, (self.x + self.padding, self.y + self.height/2 - self.textHeight/2))
+
+    def centerText(self, winWidth):
+        self.x = winWidth/2 - self.textWidth/2
+
+    def setWidth(self, width):
+        self.width = width
+        
+        self.setFont()
+
+    def setText(self, text):
+        self.text = text
+
+        self.setFont()    
+
+    def setFont(self):
+        self.fontSize = int((self.width/ len(self.text))*2) 
+        self.font = pygame.font.SysFont(self.fontName, self.fontSize , True)
+        self.textWidth, self.textHeight = self.font.size(self.text)
+        self.padding = (self.width - self.textWidth)/2 
+
+    def _checkEvent(self, event):
+        pass
+
+

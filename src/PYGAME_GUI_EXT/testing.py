@@ -9,16 +9,26 @@ pygame.display.set_caption("Testing")
 
 #Grid 
 grid = Container.Grid(WIN, 10, 10)
+label = Elements.BasicLabel('hello', (255, 0, 0))
+i = 0
 
 def start():
+    global i
     print("start")
+    i += 1
+    label.setText("hello " + str(i))
 
 def menu():
     print("menu")
 
-# grid.addChild(Elements.BasicButton("Start", start, (255, 0, 0), (0, 0, 0)), (7, 20), 6, 2)
+width = 3
+
+grid.addChild(Elements.BasicButton("Start", start, (255, 0, 0), (0, 0, 0)), (7, 7), 2, 2)
 # grid.addChild(Elements.BasicButton("menu", menu, (0, 0, 255), (0, 0, 0)), (17, 20), 6, 2)
-#grid.addChild(Elements.TestingBox((0, 255, 0)), (4, 0), 3, 2)
+grid.addChild(Elements.TestingBox((0, 255, 0)), (2, 2), width)
+grid.addChild(label, (2, 2), width)
+
+
 
 
 def drawWindow():
