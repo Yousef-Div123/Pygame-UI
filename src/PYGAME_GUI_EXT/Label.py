@@ -1,15 +1,15 @@
 import pygame
 
-class Label():
-    def __init__(self, x, y, width, text, color, fontName = None):
+class BasicLabel():
+    def __init__(self, x, y, size, text, color, fontName = None):
         self.x = x
         self.y = y
-        self.width = width
+        self.size = size
         self.text = text
         self.color = color
         self.fontName = fontName
 
-        self.font = pygame.font.SysFont(fontName, width, True)
+        self.font = pygame.font.SysFont(fontName, size, True)
         self.textWidth, self.textHeight = self.font.size(text)
 
     def draw(self,win):

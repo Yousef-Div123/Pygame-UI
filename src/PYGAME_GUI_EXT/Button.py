@@ -1,6 +1,6 @@
 import pygame
 
-class Button():
+class BasicButton():
     def __init__(self, x, y, size, text, action, color, textColor,fontName=None):
         self.x = x
         self.y = y
