@@ -5,7 +5,7 @@ with open("app/README.md", "r") as f:
 
 setup(
     name="PYGAME_GUI_EXT",
-    version="0.0.20",
+    version="0.0.2",
     description="A gui extension for pygame",
     package_dir={"": "app"},
     packages=find_packages(where="app"),
@@ -21,5 +21,8 @@ setup(
         "Operating System :: OS Independent",
     ],
     install_requires=["pygame >= 2.1.2"],
+    extras_require={
+        "dev": ["twine>=4.0.2"],
+    },
     python_requires=">=3"
 )

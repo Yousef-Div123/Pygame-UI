@@ -1,3 +1,20 @@
+Metadata-Version: 2.1
+Name: PYGAME-GUI-EXT
+Version: 0.0.2
+Summary: A gui extension for pygame
+Home-page: https://github.com/Yousef-Div123/Pygame-UI
+Author: YousefDiv
+Author-email: yousefdiv123@outlook.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
 # PYGAME GUI EXT
 
 **PYGAME GUI EXT** is a Python package that simplifies adding UI elements to a Pygame window by organizing them in a flexible grid layout. It provides ready-to-use components like buttons and labels that can be positioned easily in the window by specifying their grid coordinates and dimensions.
@@ -132,5 +149,7 @@ Contributions are welcome! If you'd like to add new features, fix bugs, or impro
 ## License
 
 This project is licensed under the MIT License. It uses Pygame, which is licensed under the LGPL. Please refer to the Pygame documentation for more details on its licensing.
+
+
 
 

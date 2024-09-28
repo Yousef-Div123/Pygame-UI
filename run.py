@@ -1,6 +1,6 @@
 import pygame
-import Container
-import Component.Elements as Elements
+import PYGAME_GUI_EXT.src.Component.Elements as Elements
+import PYGAME_GUI_EXT.src.Container as Container
 
 pygame.init()
 # window
@@ -35,5 +35,6 @@ while run:
     pygame.draw.rect(WIN, (255, 255, 255), (0, 0, 600, 700))
     # draws every element in the grid to the screen
     grid.render()
+    grid.showGrid()
 
     pygame.display.update()
